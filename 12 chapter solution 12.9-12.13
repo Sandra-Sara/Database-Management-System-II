@@ -34,5 +34,12 @@ Detects latent sector errors before they cause data loss.
 Ensures redundant data (parity or mirrors) remains consistent.
 Increases reliability and data availability.
 
-
+12.13
+Suppose you have data that should not be lost on disk failure, and the application is write-intensive. How would you store the data?
+Use RAID 10 (mirroring + striping):
+High reliability (data mirrored, so no loss on disk failure).
+High write performance (striping improves speed).
+Additionally:
+Use SSD-based RAID 10 for even faster writes.
+Maintain regular backups or cloud replication for disaster recovery.
 
