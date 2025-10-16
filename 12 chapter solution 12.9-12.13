@@ -1,0 +1,18 @@
+12.9:Ans
+How does the remapping of bad sectors by disk controllers affect data-retrieval rates?
+When a disk controller detects a bad sector, it remaps that sector to a spare one.
+This process adds extra seek time because the replacement sector might be far from the original position.
+As a result, data retrieval becomes slower — especially if many bad sectors exist.
+However, this remapping prevents data loss, so reliability is improved at the cost of slightly reduced performance.
+
+12.10
+
+Operating systems try to ensure that consecutive blocks of a file are stored on consecutive disk blocks. Why is this very important with magnetic disks? If SSDs were used instead,
+is it still important? Explain why.
+In magnetic disks (HDDs), reading consecutive blocks is faster because:
+The read/write head doesn’t need to move much (less seek time).
+Data can be read sequentially as the disk spins.
+If blocks are scattered, the head must move frequently → increased seek time → slower performance.
+In SSDs, there are no moving parts, so access time is uniform regardless of data location.
+Thus, sequential block placement is less important for performance.
+However, storing consecutively can still reduce fragmentation and simplify file management.
