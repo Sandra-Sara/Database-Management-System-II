@@ -1,4 +1,5 @@
-12.9:Ans
+12.9
+
 How does the remapping of bad sectors by disk controllers affect data-retrieval rates?
 When a disk controller detects a bad sector, it remaps that sector to a spare one.
 This process adds extra seek time because the replacement sector might be far from the original position.
@@ -16,3 +17,22 @@ If blocks are scattered, the head must move frequently â†’ increased seek time â
 In SSDs, there are no moving parts, so access time is uniform regardless of data location.
 Thus, sequential block placement is less important for performance.
 However, storing consecutively can still reduce fragmentation and simplify file management.
+
+12.11
+Which RAID level yields the least amount of interference between rebuild and ongoing disk accesses? Explain your answer.
+RAID 6 or RAID 10 yield the least interference:
+RAID 6 uses double parity, allowing data rebuilds without heavy read load on active disks.
+RAID 10 (mirroring + striping) is even better for rebuilds because data can be copied directly from a mirror without reconstructing parity.
+Reason: These RAID levels distribute rebuild workload and minimize read contention with normal disk operations.
+
+12.12
+
+What is scrubbing, in the context of RAID systems, and why is scrubbing important?
+Scrubbing is a background process that periodically reads all disks in a RAID array to verify data integrity and correct any errors using redundancy (parity or mirrors).
+It is important because:
+Detects latent sector errors before they cause data loss.
+Ensures redundant data (parity or mirrors) remains consistent.
+Increases reliability and data availability.
+
+
+
